@@ -19,3 +19,4 @@ services:
   source: /runtime/services/tables.yml
 startup: null
 startup_form: Form1
+uplink_visible: true

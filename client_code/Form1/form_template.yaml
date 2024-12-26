@@ -28,7 +28,8 @@ components:
   name: sub_heading_2
   properties: {icon: 'mi:lightbulb', icon_size: 30, text: lights}
   type: form:dep_lin1x4oec0ytd:_Components.Text
-- layout_properties: {grid_position: 'HEHWCF,XUBKPQ'}
+- event_bindings: {change: switch_1_change}
+  layout_properties: {grid_position: 'HEHWCF,XUBKPQ'}
   name: switch_1
   properties:
     align: right
@@ -55,6 +56,6 @@ components:
   properties: {style: label, text: living room}
   type: form:dep_lin1x4oec0ytd:_Components.Text
 container:
-  properties: {col_widths: '{"XUBKPQ":10,"QTIERC":50,"PVLZIW":10,"EMCRHG":50}'}
+  properties: {col_widths: '{"XUBKPQ":10,"QTIERC":50,"PVLZIW":10,"EMCRHG":50,"QNUQII":25}'}
   type: ColumnPanel
 is_package: true

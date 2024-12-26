@@ -9,3 +9,12 @@ class Form1(Form1Template):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+  def switch_1_change(self, **event_args):
+    """This method is called when the state of the component is changed."""
+    if self.switch_1.selected:
+      anvil.server.call("switch_1_on")
+    anvil.server.call("switch_1_off")
+
+
+
