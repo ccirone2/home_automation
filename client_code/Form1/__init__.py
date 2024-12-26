@@ -14,7 +14,22 @@ class Form1(Form1Template):
     """This method is called when the state of the component is changed."""
     if self.switch_1.selected:
       anvil.server.call("switch_1_on")
+      return
     anvil.server.call("switch_1_off")
+
+  def switch_2_change(self, **event_args):
+    """This method is called when the state of the component is changed."""
+    if self.switch_2.selected:
+      anvil.server.call("switch_2_on")
+      return
+    anvil.server.call("switch_2_off")
+
+  def switch_3_change(self, **event_args):
+    """This method is called when the state of the component is changed."""
+    if self.switch_3.selected:
+      anvil.server.call("switch_3_on")
+      return
+    anvil.server.call("switch_3_off")
 
 
 
