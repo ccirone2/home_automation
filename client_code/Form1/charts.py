@@ -1,3 +1,4 @@
+import anvil.server
 from plotly import graph_objects as go
 
 
