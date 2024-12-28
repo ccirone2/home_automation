@@ -19,10 +19,13 @@ components:
       padding: [20, null, null, null]
     text: temperature
   type: form:dep_lin1x4oec0ytd:_Components.Text
-- event_bindings: {click: plot_1_click}
+- event_bindings: {}
   layout_properties: {grid_position: 'ZKJUTI,TMXDFU'}
   name: plot_1
-  properties: {height: 104.79998779296875, visible: true}
+  properties:
+    height: 104.79998779296875
+    margin: ['0', '40', '0', 40]
+    visible: true
   type: Plot
 - layout_properties: {grid_position: 'XAFAQS,BDZBNG', row_background: ''}
   name: sub_heading_2

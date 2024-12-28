@@ -2,16 +2,14 @@ from ._anvil_designer import Form1Template
 from anvil import *
 import anvil.server
 
-from plotly import graph_objects as go
-
-from . import charts
+from ..charts import temperature_chart
 
 
 class Form1(Form1Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.plot_1 = charts.temperature()
+    self.plot_1.figure = temperature_chart()
 
   def button_1_on_click(self, **event_args):
     anvil.server.call("control_switch", "switch_1", True)
