@@ -1,4 +1,16 @@
 allow_embedding: false
+db_schema:
+  temperature_readings:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: timestamp
+      type: datetime
+    - admin_ui: {order: 1, width: 200}
+      name: temperature
+      type: number
+    server: full
+    title: temperature_readings
 dependencies:
 - config: {}
   dep_id: dep_lin1x4oec0ytd
@@ -13,6 +25,22 @@ runtime_options:
   server_spec: {base: python310-minimal}
   server_version: python3-full
   version: 3
+secrets:
+  google-cloud-project-id:
+    type: secret
+    value: {WKSBYUGWCJXH3BWB: AEyFFKMjIjCrChusmoWWathliYDjl/BkyNEZHupKosEefnMZhjh3KG2+BoGsfiuk77HiCpymvZI/WtaF1vc0pQLxbLzo11sDyqClRxdjK+RUHa3YDEv+r+ZOo0UH/mNdO0FXUXASkc8VsHbIzptk9RSWcMyI7e3TMOww6EFeHL+CXME=}
+  nest-device-id:
+    type: secret
+    value: {WKSBYUGWCJXH3BWB: NnxLaveMsbVTeLr+t9xC4pcxWnQ/j5Lck29H1PB6opHeFxOYtXLLuJkIqzzeTb9vBwvyaXlxcoaUCEuF6H9Kb6aBxNP5JnmDbeNeY+rI87pRd086o307d/FGIAmO6HJGAPUJhkEows9nxe7DEoi464F6Iv2z1PVbybedPAUUSCoCf1V8ndBDvmnsvij9hfV8Bjd1gByroLP32P0a/dVnseqcsvOU2YFODTf82sSter+cB2sA9YlQ0bZM8qkM}
+  nest_client_id:
+    type: secret
+    value: {WKSBYUGWCJXH3BWB: sVnlizqW+Rr6C4TkKJ01ve7uNVHswfILXvnulihBHv26A/SGi5eQaoCRKCqaj/zvNs9HWxHErSBqDjigkaZRfiPuqktfBCO74kHhPYscRAp9408wTnl7GQIbXV0W41EkzJTM0JE31Z2BH/3KBNXjsd8y/9upmsd1dNYHJrE5tngmeDPTaQ1P31eg57ifbxz6pK182bChf6txCS021uE7cS3p5j4ctbE=}
+  nest_client_secret:
+    type: secret
+    value: {WKSBYUGWCJXH3BWB: ZuoeP3EL+097EgRTVXUKFHkh42phrblbirkLGzYQxggQQCIusrp/C5sjeeIojSzVlyjsjEx1GIZ42UXyiCuQE6wNhIgI1LEHSREWQa2Ej38qE2BwtdxDJCwyNwqkTfXKjWKlIEQ/uRksndwKvNrNA7J/t6QNoTxqDNA0kVJLwnenRw==}
+  nest_refresh_token:
+    type: secret
+    value: {WKSBYUGWCJXH3BWB: vpsxfwZ5DuKj/nluDSBYnL2rlK/nCccFF+Q1SMJIsRvbATtcOxnXJhw//9+d44/Axqcf2B9NYIo1gNy7AFOpuyznH4l9iJFLbYQHGtvCqBsureah8FY4ZhcCLgKJrjYzUMuX9NUU/7RjwWhK9Lwni0HooPrDD6SFFevKWvjpnaUOSvXmApm0hiSQC3GRzhiEQsjq0JZQPwkGU0di4BRlBweNSHcfM0efTZJgf4xuRASLA8Sefe5H2BQS+J6GFIvxZc6aE2rQAhQ=}
 services:
 - client_config: {}
   server_config: {}
