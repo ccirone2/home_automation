@@ -96,7 +96,7 @@ def temperature_chart():
             type="date",
             tickformat="%-I %p",
             tickfont=dict(
-                size=6.5,
+                size=8,
                 color="rgba(255, 255, 255, 0.4)",
             ),
         ),
