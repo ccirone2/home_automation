@@ -1,27 +1,29 @@
-# .github/workflows/anvil-scheduler.yml
-name: Scheduled Anvil App Call
+# .github/workflows/nest-monitor.yml
+name: Nest Temperature Monitor
 on:
   schedule:
-    - cron: '*/1 * * * *'  # Runs every 1 minutes
-  workflow_dispatch:  # Allows manual trigger for testing
+    - cron: "*/10 * * * *" # Runs every 10 minutes
+  workflow_dispatch: # Allows manual trigger for testing
 
 jobs:
-  call-anvil:
+  collect-temp:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-          
+          python-version: "3.11"
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install anvil-uplink
-          
-      - name: Run scheduler script
+          pip install -e .
+
+      - name: Run nest monitor
         env:
           ANVIL_UPLINK_KEY: ${{ secrets.ANVIL_UPLINK_KEY }}
-        run: python server_code/nest_monitor/worker.py
+        working-directory: nest_monitor
+        run: python worker.py

@@ -1,2 +1,2 @@
 import anvil.server
-from .worker import collect_temperature_data
+from nest_monitor.worker import collect_temperature_data

@@ -1,9 +1,9 @@
 # nest_monitor/worker.py
 import anvil.server
 
-from . import auth
-from . import thermostat
-from . import db_utils as database
+from nest_monitor import auth
+from nest_monitor import thermostat
+from nest_monitor import db_utils as database
 
 
 @anvil.server.callable
@@ -13,12 +13,12 @@ def collect_temperature_data():
         try:
             credentials = auth.setup_nest_credentials()
             access_token = auth.get_access_token(credentials)
-
             temperature = thermostat.get_temperature(access_token)
             database.save_temperature_reading(temperature)
             database.cleanup_old_readings()
 
-        except:
+        except Exception as e:
+            print(f"Error collecting temperature data: {e}")
             pass
 
 
