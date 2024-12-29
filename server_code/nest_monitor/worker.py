@@ -6,7 +6,7 @@ import anvil.server
 def collect_temperature_data():
     from . import auth
     from . import thermostat
-    from . import db_utils as database
+    from ..utils import database
 
     try:
         credentials = auth.setup_nest_credentials()
