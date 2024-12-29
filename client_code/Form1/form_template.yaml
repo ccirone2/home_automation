@@ -159,6 +159,6 @@ components:
     spacing_below: small
   type: LinearPanel
 container:
-  properties: {col_spacing: medium, col_widths: '{}', wrap_on: mobile}
+  properties: {col_spacing: medium, col_widths: '{}', visible: true, wrap_on: mobile}
   type: ColumnPanel
 is_package: true
