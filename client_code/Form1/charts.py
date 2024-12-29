@@ -94,6 +94,7 @@ def temperature_chart():
             fixedrange=True,
             range=[yesterday, now],
             type="date",
+            tickformat="%I:%M %p",
         ),
         yaxis=dict(
             showgrid=False,
