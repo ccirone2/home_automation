@@ -3,6 +3,7 @@ import anvil.secrets
 import requests
 
 
+
 def get_temperature(access_token):
   """Get current temperature from the Nest thermostat"""
   project_id = anvil.secrets.get_secret("google-cloud-project-id")

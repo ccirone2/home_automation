@@ -10,16 +10,14 @@ def temperature_chart():
   # Get readings from the last 24 hours
   now = datetime.now()
   yesterday = now - timedelta(hours=24)
-  print(yesterday, now)
-  readings_filtered = app_tables.temperature_readings.search(
-    timestamp=q.between(yesterday, now)
-  )
-  readings = list(readings_filtered)
+  readings = app_tables.temperature_readings.search()
+  readings = list(readings)
 
   # Extract timestamps and temperatures
-  x_values = [row["timestamp"] for row in readings]
+  x_values = [
+    anvil.server.call("to_central_naive", row["timestamp"]) for row in readings
+  ]
   y_values = [row["temperature"] for row in readings]
-  print(x_values)
 
   fig = go.Figure()
 
@@ -94,7 +92,7 @@ def temperature_chart():
       showticklabels=True,
       visible=True,
       fixedrange=True,
-      range=[yesterday, now + timedelta(hours=24)],
+      range=[yesterday, now],
       type="date",
     ),
     yaxis=dict(

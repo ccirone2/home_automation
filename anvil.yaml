@@ -18,11 +18,11 @@ dependencies:
   version: {version_tag: v1.2.1}
 metadata: {description: view temperature and lights, title: my_house}
 name: home_automation
-native_deps: null
+native_deps: {head_html: ''}
 package_name: home_automation
 runtime_options:
   client_version: '3'
-  server_spec: {base: python310-minimal}
+  server_spec: {base: python310-standard}
   server_version: python3-full
   version: 3
 secrets:

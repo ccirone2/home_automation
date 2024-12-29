@@ -7,6 +7,7 @@ unique_ids:
   scripts:
     worker_call: 6TLNS5QE3LFUAAZSA264VFUESMGJ3OOT
   server_modules:
+    ServerPackage1: '1735456487384344680054252.3971'
     nest_monitor: '1735418108842526500337280.7728'
     nest_monitor.auth: '173543017959282738476898.78244'
     nest_monitor.db_utils: '1735430208639315303381187.9358'
