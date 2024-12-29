@@ -32,6 +32,8 @@ class Form1(Form1Template):
   def button_3_off_click(self, **event_args):
     anvil.server.call("control_switch", "switch_3", False)
 
-  def button_1_click(self, **event_args):
-    """This method is called when the component is clicked."""
-    pass
+  def toggle_icon_button_1_click(self, **event_args):
+    if self.toggle_icon_button_1.selected:
+      self.plot_1.figure = temperature_chart(extend_range=True)
+      return
+    self.plot_1.figure = temperature_chart()
