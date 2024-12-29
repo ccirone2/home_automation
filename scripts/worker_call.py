@@ -1,18 +1,19 @@
 # scripts/worker_call.py
+"""
+This script is called on a schedule using github Actions.
+The Action configuration .yml file is in .github/workflows/
+The uplink key is stored in github Secrets.
+"""
+
 import os
 import anvil.server
 
+client_uplink_key = os.environ["ANVIL_UPLINK_KEY"]
 
 if __name__ == "__main__":
-    """
-    Connects to Anvil app using uplink and calls a server function
-    """
-
-    uplink_key = os.environ["ANVIL_UPLINK_KEY"]
-
-    try:
-        anvil.server.connect(uplink_key)
-        anvil.server.call("collect_temperature_data")
-
-    finally:
-        anvil.server.disconnect()
+  """Connect to Anvil server as client and run a callable server function."""
+  try:
+    anvil.server.connect(client_uplink_key)
+    anvil.server.call("collect_temperature_data")
+  finally:
+    anvil.server.disconnect()

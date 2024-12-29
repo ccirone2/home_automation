@@ -4,7 +4,8 @@ unique_ids:
     Form1: '1735235345179800173890383.5785'
   modules:
     Form1.charts: P4VT6OAWXTJ5PPUWODT6BDWM3DIW4IVZ
-  scripts: {}
+  scripts:
+    worker_call: 6TLNS5QE3LFUAAZSA264VFUESMGJ3OOT
   server_modules:
     nest_monitor: '1735418108842526500337280.7728'
     nest_monitor.auth: '173543017959282738476898.78244'
