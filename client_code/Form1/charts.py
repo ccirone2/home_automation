@@ -3,6 +3,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 from plotly import graph_objects as go
+
 from datetime import datetime, timedelta
 
 
@@ -15,6 +16,10 @@ def temperature_chart():
     y_values = [row["temperature"] for row in data]
 
     fig = go.Figure()
+
+    # Plot range from yesterday to now
+    now = datetime.now()
+    yesterday = now - timedelta(days=1)
 
     # Plot data with custom styling
     fig.data = [
