@@ -10,11 +10,9 @@ def temperature_chart():
     # Get readings from the last 24 hours
     now = datetime.now()
     yesterday = now - timedelta(days=1)
-    readings = app_tables.temperature_readings.search(
-        q.between("timestamp", yesterday, now), tables.order_by("timestamp", ascending=False)
-    )
-    readings = list(readings)
-    readings.reverse()  # Reverse to show oldest first
+    readings_filtered = app_tables.temperature_readings.search(timestamp=q.between(yesterday, now))
+    readings_sorted = readings_filtered.search(tables.order_by("timestamp", ascending=False))
+    readings = list(readings_sorted)
 
     # Extract timestamps and temperatures
     x_values = [row["timestamp"] for row in readings]
