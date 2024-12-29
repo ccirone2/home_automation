@@ -1,0 +1,27 @@
+# .github/workflows/anvil-scheduler.yml
+name: Scheduled Anvil App Call
+on:
+  schedule:
+    - cron: '*/1 * * * *'  # Runs every 1 minutes
+  workflow_dispatch:  # Allows manual trigger for testing
+
+jobs:
+  call-anvil:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install anvil-uplink
+          
+      - name: Run scheduler script
+        env:
+          ANVIL_UPLINK_KEY: ${{ secrets.ANVIL_UPLINK_KEY }}
+        run: python server_code/nest_monitor/worker.py
