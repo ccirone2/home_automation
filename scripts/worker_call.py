@@ -1,4 +1,4 @@
-# scripts/worker.py
+# scripts/worker_call.py
 import os
 import anvil.server
 
