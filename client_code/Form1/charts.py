@@ -9,7 +9,8 @@ from datetime import datetime, timedelta
 def temperature_chart():
   # Get readings from the last 24 hours
   now = datetime.now()
-  yesterday = now - timedelta(days=1)
+  yesterday = now - timedelta(hours=24)
+  print(yesterday, now)
   readings_filtered = app_tables.temperature_readings.search(
     timestamp=q.between(yesterday, now)
   )
@@ -90,9 +91,9 @@ def temperature_chart():
       zeroline=False,
       showline=False,
       showticklabels=True,
-      visible=True,
+      visible=False,
       fixedrange=True,
-      range=[yesterday, now],
+      range=[yesterday, now + timedelta(hours=24)],
       type="date",
     ),
     yaxis=dict(
