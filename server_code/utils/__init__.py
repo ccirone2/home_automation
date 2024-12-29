@@ -27,7 +27,10 @@ def get_temperature_data():
 
     # Convert timestamps to Central time and prepare data
     data = [
-        {"timestamp": to_central_naive(row["timestamp"]), "temperature": row["temperature"]}
+        {
+            "timestamp": to_central_naive(row["timestamp"]),
+            "temperature": row["temperature"],
+        }
         for row in readings
     ]
     return data
