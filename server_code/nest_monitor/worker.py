@@ -24,6 +24,8 @@ if __name__ == "__main__":
     """
     Connects to Anvil app using uplink and calls a server function
     """
+    import os
+
     uplink_key = os.environ["ANVIL_UPLINK_KEY"]
 
     try:
