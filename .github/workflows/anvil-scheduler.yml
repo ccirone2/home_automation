@@ -25,5 +25,5 @@ jobs:
       - name: Run nest monitor
         env:
           ANVIL_UPLINK_KEY: ${{ secrets.ANVIL_UPLINK_KEY }}
-        working-directory: nest_monitor
+        working-directory: server_code/nest_monitor
         run: python worker.py
