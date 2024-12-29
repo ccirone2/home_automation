@@ -19,6 +19,7 @@ def temperature_chart():
   # Extract timestamps and temperatures
   x_values = [row["timestamp"] for row in readings]
   y_values = [row["temperature"] for row in readings]
+  print(x_values)
 
   fig = go.Figure()
 
@@ -91,7 +92,7 @@ def temperature_chart():
       zeroline=False,
       showline=False,
       showticklabels=True,
-      visible=False,
+      visible=True,
       fixedrange=True,
       range=[yesterday, now + timedelta(hours=24)],
       type="date",
