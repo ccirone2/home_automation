@@ -2,7 +2,7 @@
 name: Scheduled Anvil App Call
 on:
   schedule:
-    - cron: "*/1 * * * *" # Runs every 1 minutes
+    - cron: "*/10 * * * *" # Runs every 10 minutes
   workflow_dispatch: # Allows manual trigger for testing
 
 jobs:
@@ -24,4 +24,4 @@ jobs:
       - name: Run scheduler script
         env:
           ANVIL_UPLINK_KEY: ${{ secrets.ANVIL_UPLINK_KEY }}
-        run: python server_code/nest_monitor/worker.py
+        run: python scripts/worker_call.py
