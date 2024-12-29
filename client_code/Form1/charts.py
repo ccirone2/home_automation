@@ -11,7 +11,7 @@ def temperature_chart():
     now = datetime.now()
     yesterday = now - timedelta(days=1)
     readings = app_tables.temperature_readings.search(
-        tables.order_by("timestamp", ascending=False), q.between("timestamp", yesterday, now)
+        q.between("timestamp", yesterday, now), tables.order_by("timestamp", ascending=False)
     )
     readings = list(readings)
     readings.reverse()  # Reverse to show oldest first
