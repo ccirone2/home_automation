@@ -95,6 +95,11 @@ def temperature_chart():
             range=[yesterday, now],
             type="date",
             tickformat="%-I %p",
+            tickfont=dict(
+                size=10,
+                color="rgba(255, 255, 255, 0.6)",
+                family="Arial",
+            ),
         ),
         yaxis=dict(
             showgrid=False,
