@@ -33,9 +33,12 @@ def temperature_history_figure(extend_range=False):
       ),
       line=dict(width=2),
       mode="lines",
-      hovertemplate="%{y}°F<extra>%{x|%-I:%M %p}</extra>",
+      hovertemplate="%{y} °F<extra> %{x|%-I:%M %p}</extra>",
       hoverlabel=dict(
-        bgcolor="rgba(33, 183, 126, 0.05)", 
+        bgcolor="rgba(28, 27, 31, 1)",
+        bordercolor="rgba(225, 227, 223, 1)",
+        # bgcolor="rgba(33, 183, 126, 0.8)",
+        # bordercolor="rgba(28, 27, 31, 1)",
       ),
     ),
     # Add horizontal line at y=65
@@ -102,12 +105,7 @@ def temperature_history_figure(extend_range=False):
         size=9,
         color="rgba(255, 255, 255, 0.4)",
       ),
-      side="top",
-      showspikes=True,
-      spikecolor="rgba(255, 255, 255, 0.3)",  # Set spike color
-      spikethickness=0.5,  # Line thickness
-      spikedash="solid",  # Line style
-      spikemode="across",  # Line spans across plot
+      side="top",      
     ),
     yaxis=dict(
       showgrid=False,
@@ -119,7 +117,6 @@ def temperature_history_figure(extend_range=False):
       range=[y_range_min, y_range_max],
     ),
     dragmode=False,
-    hovermode="x",
   )
 
   return fig
