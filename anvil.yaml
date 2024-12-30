@@ -1,6 +1,6 @@
 allow_embedding: false
 db_schema:
-  temperature_readings:
+  temperature_records:
     client: search
     columns:
     - admin_ui: {order: 0, width: 200}
@@ -10,7 +10,7 @@ db_schema:
       name: temperature
       type: number
     server: full
-    title: temperature_readings
+    title: temperature_records
 dependencies:
 - config: {}
   dep_id: dep_lin1x4oec0ytd
