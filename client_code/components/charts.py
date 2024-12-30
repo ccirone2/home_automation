@@ -111,7 +111,7 @@ def temperature_history_figure(extend_range=False):
             range=[y_range_min, y_range_max],
         ),
         dragmode=False,
-        hovermode="x unified",
+        hovermode="x",
         # hoverlabel=dict(
         #   bgcolor="rgba(0, 0, 0, 0.6)",
         #   font=dict(
