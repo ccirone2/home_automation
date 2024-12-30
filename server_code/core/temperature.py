@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 
 import anvil.server
 
-import config
+import _config
 from api.nest import auth, thermostat
 from data import database
 from utils import to_central_naive

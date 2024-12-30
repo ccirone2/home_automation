@@ -1,4 +1,4 @@
-# config.py
+# _config.py
 
 from datetime import timedelta
 
