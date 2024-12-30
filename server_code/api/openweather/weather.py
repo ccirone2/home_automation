@@ -1,6 +1,5 @@
 import anvil.http
 
-
 def fetch_outdoor_temp(location):
     """
     Fetch the current outdoor temperature for a given location.

@@ -4,12 +4,12 @@ from anvil.tables import app_tables
 import anvil.server
 from plotly import graph_objects as go
 
-from datetime import datetime, timedelta
+from datetime import datetime
 
 
 def temperature_history_figure(extend_range=False):
     # Get readings from the server
-    data = anvil.server.call("get_temperature_history", extend_range)
+    data, history = anvil.server.call("get_temperature_history", extend_range)
 
     # Extract timestamps and temperatures
     x_values = [row["timestamp"] for row in data]
@@ -19,7 +19,6 @@ def temperature_history_figure(extend_range=False):
 
     # Plot range from past to now
     now = datetime.now()
-    history = timedelta(days=3) if extend_range else timedelta(days=1)
     past = now - history
 
     # Plot data with custom styling
