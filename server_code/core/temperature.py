@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 
 import anvil.server
 
-import _config
+import home_automation._config as configs
 from api.nest import auth, thermostat
 from data import database
 from utils import to_central_naive
@@ -49,7 +49,7 @@ def get_temperature_history(extend_range=False):
       list: A list of temperature records with timestamps in Central time.
   """
   now = datetime.now()
-  history = _config.HISTORY_EXTENDED if extend_range else _config.HISTORY_SHORT
+  history = configs.HISTORY_EXTENDED if extend_range else configs.HISTORY_SHORT
   past = now - timedelta(days=history)
   records = database.get_temperature_records(past, now)
 

@@ -5,7 +5,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 
-from .charts import temperature_history_figure
+from home_automation.components import temperature_history_figure
 
 
 class home(homeTemplate):

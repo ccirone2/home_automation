@@ -1,3 +1,3 @@
 # components/__init__.py
 
-from . import temperature_plot
+from charts import temperature_history_figure
