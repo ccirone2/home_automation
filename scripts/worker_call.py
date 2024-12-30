@@ -11,9 +11,9 @@ import anvil.server
 client_uplink_key = os.environ["ANVIL_UPLINK_KEY"]
 
 if __name__ == "__main__":
-  """Connect to Anvil server as client and run a callable server function."""
-  try:
-    anvil.server.connect(client_uplink_key)
-    anvil.server.call("collect_temperature_data")
-  finally:
-    anvil.server.disconnect()
+    """Connect to Anvil server as client and run a callable server function."""
+    try:
+        anvil.server.connect(client_uplink_key)
+        anvil.server.call("fetch_nest_temperature", save=True)
+    finally:
+        anvil.server.disconnect()
