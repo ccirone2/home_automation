@@ -119,7 +119,7 @@ def temperature_history_figure(extend_range=False):
         dragmode=False,
         hovermode="x",
         hoverlabel=dict(
-            namelength=0,
+            # namelength=0,
             borderwidth=0,
         ),
     )
