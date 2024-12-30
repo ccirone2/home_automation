@@ -41,6 +41,9 @@ secrets:
   nest_refresh_token:
     type: secret
     value: {WKSBYUGWCJXH3BWB: vpsxfwZ5DuKj/nluDSBYnL2rlK/nCccFF+Q1SMJIsRvbATtcOxnXJhw//9+d44/Axqcf2B9NYIo1gNy7AFOpuyznH4l9iJFLbYQHGtvCqBsureah8FY4ZhcCLgKJrjYzUMuX9NUU/7RjwWhK9Lwni0HooPrDD6SFFevKWvjpnaUOSvXmApm0hiSQC3GRzhiEQsjq0JZQPwkGU0di4BRlBweNSHcfM0efTZJgf4xuRASLA8Sefe5H2BQS+J6GFIvxZc6aE2rQAhQ=}
+  open_weather_api_key:
+    type: secret
+    value: {WKSBYUGWCJXH3BWB: uFK3M1ZVw1V7aRSJN1nGv1Z4kUH0IiCy1SA0y046wNEPjPaZiHzaABMXcd7TN0mbN9xKuhVClPZ2dwyxj0AjoSd2y1MY81NUg4GZ/BVQ0rb2AxnFnQ33TO8h/uQM91DKKNQgITDkxJWwA/Kc++gRIiULYpBwbnijGgpfIjZYDA==}
 services:
 - client_config: {}
   server_config: {}

@@ -12,7 +12,10 @@ class Form1(Form1Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.location = {"lat": 37.084229, "lon": -94.513283}  # For OpenWeather API call
     self.plot_1.figure = temperature_chart()
+    self.text_4.text = anvil.server.call("collect_temperature_data", save=False) + " °F"
+    self.text_5.text = anvil.server.call("get_outdoor_temp", self.location) + " °F"
 
   def button_1_on_click(self, **event_args):
     anvil.server.call("control_switch", "switch_1", True)
@@ -37,3 +40,8 @@ class Form1(Form1Template):
       self.plot_1.figure = temperature_chart(extend_range=True)
       return
     self.plot_1.figure = temperature_chart()
+
+  def timer_1_tick(self, **event_args):
+    """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
+    self.text_4.text = anvil.server.call("collect_temperature_data", save=False) + " °F"
+    self.text_5.text = anvil.server.call("get_outdoor_temp", self.location) + " °F"

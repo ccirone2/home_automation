@@ -29,7 +29,7 @@ def temperature_chart(extend_range=False):
       x=x_values,
       y=[round(y) for y in y_values],  # Round to nearest whole number
       marker=dict(
-        color="rgb(255, 255, 0)",
+        color="rgb(33, 183, 126)",  # 21B77E
         size=4,
       ),
       line=dict(width=1),
