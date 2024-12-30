@@ -100,6 +100,12 @@ def temperature_history_figure(extend_range=False):
                 color="rgba(255, 255, 255, 0.4)",
             ),
             side="top",
+            spikecolor="grey",  # Set spike color
+            spikethickness=1,  # Line thickness
+            spikedash="solid",  # Line style
+            spikesnap="cursor",  # Snap to nearest data point
+            spikemode="across",  # Line spans across plot
+            spikealpha=0.2,  # Set opacity to 0.2
         ),
         yaxis=dict(
             showgrid=False,
@@ -112,13 +118,10 @@ def temperature_history_figure(extend_range=False):
         ),
         dragmode=False,
         hovermode="x",
-        # hoverlabel=dict(
-        #   bgcolor="rgba(0, 0, 0, 0.6)",
-        #   font=dict(
-        #     size=10,
-        #     color="rgba(255, 255, 255, 0.9)",
-        #   ),
-        # ),
+        hoverlabel=dict(
+            namelength=0,
+            borderwidth=0,
+        ),
     )
 
     return fig
