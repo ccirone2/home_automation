@@ -43,6 +43,6 @@ class Form1(Form1Template):
         self.plot_1.figure = temperature_history_figure()
 
     def timer_1_tick(self, **event_args):
-        indoor_temp, outdoor_temp = anvil.server.call("page_refresh", self.location)
+        indoor_temp, outdoor_temp = anvil.server.call("refresh_page", self.location)
         self.text_4.text = indoor_temp + " °F"
         self.text_5.text = outdoor_temp + " °F"
