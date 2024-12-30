@@ -1,9 +1,9 @@
 unique_ids:
   assets: {}
   forms:
-    Form1: '1735235345179800173890383.5785'
+    home: '1735235345179800173890383.5785'
   modules:
-    Form1.charts: P4VT6OAWXTJ5PPUWODT6BDWM3DIW4IVZ
+    home.temperature_plot: P4VT6OAWXTJ5PPUWODT6BDWM3DIW4IVZ
   scripts:
     worker_call: 6TLNS5QE3LFUAAZSA264VFUESMGJ3OOT
   server_modules:
