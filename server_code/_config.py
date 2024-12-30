@@ -6,5 +6,5 @@ from datetime import timedelta
 MAX_RECORD_AGE = timedelta(days=7)
 
 # Temperature figure ranges
-HISTORY_SHORT = timedelta(days=1)
-HISTORY_EXTENDED = timedelta(days=3)
+HISTORY_SHORT = 1  # days
+HISTORY_EXTENDED = 3  # days
