@@ -13,7 +13,7 @@ components:
   - event_bindings: {}
     layout_properties: {}
     name: text_4
-    properties: {font_size: 24, icon: '', text: 72 °F}
+    properties: {font_size: 20, icon: '', scale: medium, style: body, text: 00 °F}
     type: form:dep_lin1x4oec0ytd:_Components.Text
   - layout_properties: {width: 25}
     name: text_6
@@ -21,7 +21,7 @@ components:
     type: form:dep_lin1x4oec0ytd:_Components.Text
   - layout_properties: {}
     name: text_5
-    properties: {align: justify, font_size: 24, icon: '', text: 55 °F}
+    properties: {align: justify, font_size: 20, icon: '', text: 00 °F}
     type: form:dep_lin1x4oec0ytd:_Components.Text
   layout_properties: {grid_position: 'JJZDKP,WFUXBT'}
   name: flow_panel_5
