@@ -36,7 +36,6 @@ def temperature_history_figure(extend_range=False):
       hovertemplate="%{y}°F<extra>%{x|%-I:%M %p}</extra>",
       hoverlabel=dict(
         bgcolor="rgba(33, 183, 126, 0.05)", 
-        # borderwidth=0,
       ),
     ),
     # Add horizontal line at y=65
