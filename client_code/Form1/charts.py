@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 
 def temperature_history_figure(extend_range=False):
   # Get readings from the server
-  data = anvil.server.call("get_temperature_history", extend_range)
+  data, history = anvil.server.call("get_temperature_history", extend_range)
 
   # Extract timestamps and temperatures
   x_values = [row["timestamp"] for row in data]
@@ -19,8 +19,7 @@ def temperature_history_figure(extend_range=False):
 
   # Plot range from past to now
   now = datetime.now()
-  history = timedelta(days=3) if extend_range else timedelta(days=1)
-  past = now - history
+  past = now - timedelta(days=history)
 
   # Plot data with custom styling
   fig.data = [
@@ -33,7 +32,6 @@ def temperature_history_figure(extend_range=False):
         size=4,
       ),
       line=dict(width=2),
-      # mode="lines+markers",
       mode="lines",
       hovertemplate="%{y}°F<extra></extra>",  # No decimal in hover
     ),

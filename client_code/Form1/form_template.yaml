@@ -17,7 +17,7 @@ components:
     type: form:dep_lin1x4oec0ytd:_Components.Text
   - layout_properties: {width: 25}
     name: text_6
-    properties: {align: center, bold: false, font_size: 36, italic: false, text: '|', underline: false}
+    properties: {align: center, bold: false, font_size: 36, italic: false, text: '|', text_color: 'rgba(255,255,255,0.3)', underline: false}
     type: form:dep_lin1x4oec0ytd:_Components.Text
   - layout_properties: {}
     name: text_5
@@ -110,8 +110,7 @@ components:
         icon: mi:floor_lamp
         margin: [null, null, null, '4']
       type: form:dep_lin1x4oec0ytd:_Components.IconButton
-    - data_bindings: []
-      layout_properties: {}
+    - layout_properties: {}
       name: text_1
       properties:
         line_height: '3.4'
