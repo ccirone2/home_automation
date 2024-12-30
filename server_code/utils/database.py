@@ -4,19 +4,35 @@ from anvil.tables import app_tables
 from datetime import datetime, timedelta
 
 
-def save_temperature_reading(temperature):
-    """Save a temperature reading to the database"""
-    app_tables.temperature_readings.add_row(timestamp=datetime.now(), temperature=temperature)
+def save_temperature(temperature):
+    """
+    Save a temperature record to the database.
+
+    Args:
+        temperature (float): The temperature record to save.
+    """
+    app_tables.temperature_records.add_row(timestamp=datetime.now(), temperature=temperature)
 
 
-def cleanup_old_readings():
-    """Remove readings older than 7 days"""
+def remove_old_temperature_records():
+    """
+    Remove temperature records older than 7 days from the database.
+    """
     week_ago = datetime.now() - timedelta(days=7)
-    old_rows = app_tables.temperature_readings.search(timestamp=q.less_than(week_ago))
+    old_rows = app_tables.temperature_records.search(timestamp=q.less_than(week_ago))
     for row in old_rows:
         row.delete()
 
 
-def get_temperature_readings(start_time, end_time):
-    """Fetch temperature readings between start_time and end_time"""
-    return app_tables.temperature_readings.search(timestamp=q.between(start_time, end_time))
+def get_temperature_records(start_time, end_time):
+    """
+    Get temperature records between start_time and end_time.
+
+    Args:
+        start_time (datetime): The start time for the query.
+        end_time (datetime): The end time for the query.
+
+    Returns:
+        list: A list of temperature records.
+    """
+    return app_tables.temperature_records.search(timestamp=q.between(start_time, end_time))
